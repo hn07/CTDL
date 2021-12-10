@@ -1,0 +1,24 @@
+Position myLocate(ElementType x, List L){
+	Position p = first(L);
+	int Found = 0;
+	Position end = endList(L)
+	while(p!= end && !Found){
+		if(retrieve(p,L)>=x) Found = 1;
+		else p= next(p,L);
+	}
+	return p;
+}
+
+void sort (List *pL){
+	Position P = first(*pL), E= endList(*pL), Q;
+	while (P! = E){
+		Q = next(P,*pL);
+		while (Q!= E){
+			if(retrieve(Q,*pL)< retrieve(P,*pL)){
+				swap(P,Q,pL);
+			}
+			Q= next(Q,*pL);
+		}
+		P = next(P,*pL);
+	}
+}
